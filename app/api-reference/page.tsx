@@ -1,12 +1,9 @@
-import type { Metadata } from "next"
-
-export const metadata: Metadata = {
-  title: "API Reference | Minimal Docs Site",
-  description: "Detailed API reference for our library",
-}
+'use client'
+import FadeContent from "@/components/ui/FadeContent/FadeContent"
 
 export default function ApiReference() {
   return (
+    <FadeContent duration={1000} easing="ease-out" initialOpacity={0}>
     <main className="max-w-3xl mx-auto">
       <h1 className="text-4xl font-bold mb-6">API Reference</h1>
       <p className="text-xl mb-4">
@@ -54,6 +51,7 @@ export default function ApiReference() {
         For more detailed information about specific components and their props, please refer to the Components section.
       </p>
     </main>
+    </FadeContent>
   )
 }
 

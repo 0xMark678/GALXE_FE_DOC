@@ -41,7 +41,7 @@ export function AppSidebar() {
                   <GalleryVerticalEnd className="size-4" />
                 </div>
                 <div className="flex flex-col gap-0.5 leading-none">
-                  <ShinyText className="font-semibold" text="Galxe Docs" />
+                  <ShinyText className="font-semibold custom-class text-yellow-600" text="Galxe Docs" disabled={false} speed={3}/>
                   <span className="">v1.0.0</span>
                 </div>
               </Link>

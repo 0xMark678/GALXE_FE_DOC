@@ -1,14 +1,12 @@
-import type { Metadata } from "next"
-
-export const metadata: Metadata = {
-  title: "Introduction | Minimal Docs Site",
-  description: "Welcome to our minimal documentation site",
-}
+'use client'
+import ShinyText from "@/components/ui/ShinyText/ShinyText"
+import FadeContent from "@/components/ui/FadeContent/FadeContent"
 
 export default function Home() {
   return (
+    <FadeContent duration={1000} easing="ease-out" initialOpacity={0}>
     <main className="mx-auto max-w-3xl">
-      <h1 className="mb-6 text-4xl font-bold">Welcome to Our Docs</h1>
+      <ShinyText className="font-bold text-4xl custom-class text-yellow-600 mb-4" text="Welcome to Our Docs" disabled={false} speed={3}/>
       <p className="mb-4">
         This is a gorgeous minimal documentation site built with Next.js, Tailwind CSS, and shadcn/ui components.
       </p>
@@ -45,6 +43,7 @@ export default function Home() {
         please open an issue or submit a pull request on our GitHub repository.
       </p>
     </main>
+    </FadeContent>
   )
 }
 

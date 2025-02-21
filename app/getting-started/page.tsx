@@ -1,15 +1,27 @@
-import type { Metadata } from "next"
-
-export const metadata: Metadata = {
-  title: "Getting Started | Minimal Docs Site",
-  description: "Learn how to get started with our documentation",
-}
+'use client'
+import FadeContent from "@/components/ui/FadeContent/FadeContent"
+import SplitText from "@/components/ui/SplitText/SplitText"
 
 export default function GettingStarted() {
+  const handleAnimationComplete = () => {
+    console.log('All letters have animated!');
+  };
+
   return (
+    <FadeContent duration={1000} easing="ease-out" initialOpacity={0}>
+
     <main className="max-w-3xl mx-auto">
-      <h1 className="text-4xl font-bold mb-6">Getting Started</h1>
-      <p className="text-xl mb-4">
+      <SplitText
+        text="Getting Started"
+        className=" text-center text-4xl font-bold text-red-500"
+        delay={150}
+        animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
+        animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
+        threshold={0.2}
+        rootMargin="-50px"
+        onLetterAnimationComplete={handleAnimationComplete}
+      />
+      <p className="text-xl my-4">
         Welcome to the getting started guide for our documentation site. Follow these steps to set up your environment
         and begin using our tools.
       </p>
@@ -38,8 +50,10 @@ const client = new Client();
 const result = await client.doSomething();
 console.log(result);`}</code>
       </pre>
-      <p className="mt-4">For more detailed information, please check out our Components and API Reference sections.</p>
-    </main>
+        <p className="mt-4">For more detailed information, please check out our Components and API Reference sections.</p>
+      </main>
+    </FadeContent>
   )
 }
+
 

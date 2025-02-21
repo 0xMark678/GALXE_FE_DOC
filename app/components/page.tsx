@@ -1,12 +1,12 @@
-import type { Metadata } from "next"
+'use client'
 
-export const metadata: Metadata = {
-  title: "Components | Minimal Docs Site",
-  description: "Explore the components available in our library",
-}
+import FadeContent from "@/components/ui/FadeContent/FadeContent"
+
 
 export default function Components() {
   return (
+    <FadeContent duration={1000} easing="ease-out" initialOpacity={0}>
+
     <div className="max-w-3xl mx-auto">
       <h1 className="text-4xl font-bold mb-6">Components</h1>
       <p className="text-xl mb-4">
@@ -46,6 +46,7 @@ export default function Components() {
         For a complete list of components and their props, please refer to our API Reference section.
       </p>
     </div>
+    </FadeContent>
   )
 }
 
