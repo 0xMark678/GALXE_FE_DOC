@@ -25,6 +25,7 @@ const navItems = [
   { title: "Getting Started", url: "/getting-started" },
   { title: "Components", url: "/components" },
   { title: "API Reference", url: "/api-reference" },
+  { title: "Experiment", url: "/experiment" },
 ]
 
 export function AppSidebar() {
